@@ -5,7 +5,7 @@ WORKDIR /app
 EXPOSE 80
 EXPOSE 443
 
-FROM dataimages123/sdk AS build
+FROM dataimages123/sdk:latest AS build
 WORKDIR /src
 COPY ["DataServices/DataServices.csproj", "DataServices/"]
 RUN dotnet restore "DataServices/DataServices.csproj"
