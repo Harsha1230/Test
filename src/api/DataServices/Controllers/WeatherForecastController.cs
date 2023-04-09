@@ -23,13 +23,13 @@ namespace DataServices.Controllers
         [HttpGet(Name = "GetWeatherForecast")]
         public IEnumerable<WeatherForecast> Get()
         {
-            Console.WriteLine(configuration["DMS-BlobConnection"]);
+            //Console.WriteLine(configuration["DMS-BlobConnection"]);
             return Enumerable.Range(1, 5).Select(index => new WeatherForecast
             {
                 Date = DateTime.Now.AddDays(index),
                 TemperatureC = Random.Shared.Next(-20, 55),
-                Summary = Summaries[Random.Shared.Next(Summaries.Length)],
-                KeyvaultValue = configuration["DMS-BlobConnection"]
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                //KeyvaultValue = configuration["DMS-BlobConnection"]
             })
             .ToArray();
         }
